@@ -1,0 +1,16 @@
+{
+  "benefit_name": "aposentadoria",
+  "country": "BR",
+  "language": "pt-BR",
+  "seed_keywords": [
+    "aposentadoria",
+    "aposentadoria por idade",
+    "aposentadoria por tempo de contribuição",
+    "aposentadoria especial",
+    "como se aposentar"
+  ],
+  "conversion_rate_assumption": 0.08,
+  "lead_to_client_rate_assumption": 0.20,
+  "target_cpa_threshold": 250,
+  "monthly_budget_test": 5000
+}

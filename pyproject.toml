@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "legal-demand-planner"
+version = "0.1.0"
+description = "Transforma sinais de busca sobre benefícios e direitos do cidadão em decisão de lançamento, persona, pitch e plano de teste de aquisição."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0",
+    "click>=8.0",
+    "rich>=13.0",
+]
+
+[project.scripts]
+ldp = "legal_demand_planner.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["legal_demand_planner*"]
