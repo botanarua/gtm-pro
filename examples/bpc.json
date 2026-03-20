@@ -1,0 +1,17 @@
+{
+  "benefit_name": "BPC",
+  "country": "BR",
+  "language": "pt-BR",
+  "seed_keywords": [
+    "bpc",
+    "bpc loas",
+    "benefício de prestação continuada",
+    "bpc idoso",
+    "bpc deficiente",
+    "bpc autista"
+  ],
+  "conversion_rate_assumption": 0.08,
+  "lead_to_client_rate_assumption": 0.20,
+  "target_cpa_threshold": 250,
+  "monthly_budget_test": 5000
+}
