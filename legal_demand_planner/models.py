@@ -160,16 +160,3 @@ class BenefitAnalysis(BaseModel):
     acquisition_experiment: AcquisitionExperiment = AcquisitionExperiment()
 
 
-class RankedBenefit(BaseModel):
-    rank: int
-    benefit_name: str
-    score: float
-    label: DiagnosisLabel
-    observations: list[str] = []
-
-
-class PlannerOutput(BaseModel):
-    """Saída final do sistema com ranking entre benefícios."""
-
-    benefits: list[BenefitAnalysis] = []
-    ranking: list[RankedBenefit] = []

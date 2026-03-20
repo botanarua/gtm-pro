@@ -1,6 +1,6 @@
 """Pipeline principal do Legal Demand Planner.
 
-Orquestra todas as etapas de análise para um ou mais benefícios.
+Orquestra todas as etapas de análise para um benefício.
 """
 
 from __future__ import annotations
@@ -8,7 +8,6 @@ from __future__ import annotations
 from legal_demand_planner.models import (
     BenefitAnalysis,
     BenefitInput,
-    PlannerOutput,
     SearchDemand,
 )
 from legal_demand_planner.stages.cac_estimation import estimate_cac
@@ -22,7 +21,6 @@ from legal_demand_planner.stages.keyword_collection import expand_keywords
 from legal_demand_planner.stages.market_sizing import estimate_market_size
 from legal_demand_planner.stages.persona_builder import build_persona
 from legal_demand_planner.stages.pitch_generator import generate_pitch
-from legal_demand_planner.stages.ranking import rank_benefits
 
 
 def analyze_benefit(benefit_input: BenefitInput) -> BenefitAnalysis:
@@ -69,14 +67,3 @@ def analyze_benefit(benefit_input: BenefitInput) -> BenefitAnalysis:
         sales_pitch=pitch,
         acquisition_experiment=experiment,
     )
-
-
-def run_pipeline(benefit_inputs: list[BenefitInput]) -> PlannerOutput:
-    """Executa o pipeline para múltiplos benefícios e gera ranking."""
-
-    analyses = [analyze_benefit(bi) for bi in benefit_inputs]
-
-    # Etapa 9 — Ranking
-    ranking = rank_benefits(analyses)
-
-    return PlannerOutput(benefits=analyses, ranking=ranking)

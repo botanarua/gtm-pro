@@ -13,19 +13,13 @@ pip install -e .
 ### Analisar um benefício
 
 ```bash
-ldp examples/salario_maternidade.json
-```
-
-### Comparar múltiplos benefícios
-
-```bash
-ldp examples/bpc.json examples/salario_maternidade.json examples/aposentadoria.json
+ldp examples/bpc.json
 ```
 
 ### Exportar resultado em JSON
 
 ```bash
-ldp examples/bpc.json examples/salario_maternidade.json -o resultado.json
+ldp examples/bpc.json -o resultado.json
 ```
 
 ### Apenas JSON (sem formatação)
@@ -34,21 +28,9 @@ ldp examples/bpc.json examples/salario_maternidade.json -o resultado.json
 ldp examples/bpc.json --json-only
 ```
 
-## Estrutura do Pipeline
-
-1. **Coleta de keywords** — Expande seed keywords (simulado no MVP, integrável com Google Ads Keyword Planner)
-2. **Clusterização por intenção** — Classifica buscas em Awareness, Consideration e Action
-3. **Tamanho do mercado** — Estima mercado endereçável por estágio
-4. **Estimativa de CAC** — Calcula CAC por cluster e blended
-5. **Diagnóstico** — Classifica em Testar / Testar com cautela / Não testar
-6. **Persona JTBD** — Gera persona baseada em buscas reais
-7. **Pitch de vendas** — Cria proposta de valor alinhada ao cluster dominante
-8. **Experimento de aquisição** — Planeja teste de Google Ads Search
-9. **Ranking** — Compara e prioriza benefícios candidatos
-
 ## Input
 
-Arquivo JSON por benefício:
+Arquivo JSON com a configuração do benefício:
 
 ```json
 {
@@ -65,6 +47,17 @@ Arquivo JSON por benefício:
   "monthly_budget_test": 5000
 }
 ```
+
+## Pipeline
+
+1. **Coleta de keywords** — Expande seed keywords (simulado no MVP, integrável com Google Ads API)
+2. **Clusterização por intenção** — Classifica buscas em Awareness, Consideration e Action
+3. **Tamanho do mercado** — Estima mercado endereçável por estágio
+4. **Estimativa de CAC** — Calcula CAC por cluster e blended
+5. **Diagnóstico** — Classifica em Testar / Testar com cautela / Não testar
+6. **Persona JTBD** — Gera persona baseada em buscas reais
+7. **Pitch de vendas** — Cria proposta de valor alinhada ao cluster dominante
+8. **Experimento de aquisição** — Planeja teste de Google Ads Search
 
 ## Próximos passos
 
